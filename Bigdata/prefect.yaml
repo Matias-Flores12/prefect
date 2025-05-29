@@ -1,0 +1,13 @@
+name: Bigdata
+prefect-version: 2.20.18
+
+pull:
+- prefect.deployments.steps.git_clone:
+    repository: https://github.com/Matias-Flores12/prefect.git
+    branch: main
+
+deployments:
+- name: EvaluacionEstudiantil
+  entrypoint: main.py:pipeline_estudiantes
+  work_pool:
+    name: prod-pool
